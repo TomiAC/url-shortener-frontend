@@ -33,7 +33,7 @@ export default function DashboardPage() {
     if (!token) throw new Error("No token found");
     const loadUrls = async () => {
 
-      const response = await fetch("https://url-shortener-gqch.onrender.com/get_urls",
+      const response = await fetch("https://url-shortener-gqch.onrender.com/url/get_urls",
         {
           method: "GET",
           headers: {
