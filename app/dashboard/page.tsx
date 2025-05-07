@@ -12,8 +12,16 @@ import { useToast } from "@/hooks/use-toast"
 import { UrlTable } from "@/components/url-table"
 import { CreateUrlDialog } from "@/components/create-url-dialog"
 
+interface Url {
+  id: string;
+  short_code: string;
+  long_url: string;
+  clicks: number;
+  created_at: string;
+}
+
 export default function DashboardPage() {
-  const [urls, setUrls] = useState([])
+  const [urls, setUrls] = useState<Url[]>([])
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
